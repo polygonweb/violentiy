@@ -1,0 +1,42 @@
+include /src/views/components/index
+
+block defs
+    -
+        var lang = "ru";
+        var htmlClass = "";
+        var bodyClass = "";
+        var pageTitle = "";
+
+doctype html
+html(class="ctx-no-js" + htmlClass, lang=lang)
+    head
+        block blockHead
+            meta(charset="utf-8")
+            meta(http-equiv="X-UA-Compatible", content="IE=edge")
+            meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+            meta(name="format-detection" content="telephone=no")
+            meta(name="format-detection" content="address=no")
+
+            block blockHeadStyles
+                +style("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700|Prata&amp;subset=cyrillic,cyrillic-ext")
+                +style("assets/css/main.css")
+
+            block blockHeadScripts
+                script.
+                    ;(function(html) {
+                        html.className = html.className.replace("ctx-no-js", "ctx-js")
+                    })(document.documentElement);
+
+            block blockTitle
+                - var title = "Svetlana Violenty" + (pageTitle ? " | " + pageTitle : "")
+                title #{title}
+
+    block blockBody
+        body(class=bodyClass)
+
+            block blockContent
+
+            block modals
+
+            block blockBodyScripts
+                +script("assets/js/main.js")

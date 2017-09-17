@@ -1,0 +1,14 @@
+mixin card(props)
+    a.card(href=js0)
+        img.card__img(src=props.img , alt="")
+        .card__article #{props.article}
+        .card__title
+            .card__title-text #{props.title}
+            +icon("arrow").card__title-arrow
+        .card__price
+            if (props.unit && props.unit .trim() !== '')
+                span.card__value #{props.price}
+                span.card__unit #{props.unit}
+            else
+                | Цена по запросу
+        .card__stock(class=(props.stockType === 1) ? 'card__stock_order' : '') #{props.stock}

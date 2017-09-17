@@ -1,0 +1,76 @@
+.modal
+    position fixed
+    z-index 1
+    top 0
+    bottom 0
+    left 0
+    right 0
+    opacity 0
+    visibility hidden
+    overflow auto
+    background rgba(0, 0, 0, 0.5)
+    transition .5s
+
+    &__dialog
+        position relative
+        display inline-block
+        vertical-align middle
+        transform translateY(-100%)
+        box-sizing border-box
+        width 100%
+        text-align left
+        font-size 1rem
+        white-space normal
+        background #fff
+        transition .5s cubic-bezier(0.64, 0.12, 0.16, 1)
+
+    &__close
+        position absolute
+        top 0
+        right 0
+        padding 40px
+        border 0
+        background 0
+        font-size 0
+        cursor pointer
+
+        &:hover
+            color: $colors["brand"]
+
+    &__inner
+        height 100%
+        text-align center
+        font-size 0
+        white-space nowrap
+
+        &::before
+            content ""
+            display inline-block
+            vertical-align middle
+            height 100%
+
+    +rmax($screens["medium"] - 1px)
+        &__inner
+            padding-left 0
+            padding-right 0
+
+
+    +rmin($screens["medium"])
+        &__dialog
+            margin 20px auto
+            // width: "calc(10 / 12 * 100% - %s)" % ($grid-settings["gutter"]*2);
+            width: calc(10 / 12 * 100%)
+            height auto
+
+        &__close
+            padding 20px
+
+    &_show
+        opacity 1
+        visibility visible
+
+    &_show &__dialog
+        transform: translateY(0)
+
+.ctx-modal-open
+    overflow hidden

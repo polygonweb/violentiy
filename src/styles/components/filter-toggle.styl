@@ -1,0 +1,38 @@
+.filter-toggle
+    position relative
+    padding 0
+    border 0
+    overflow visible
+    text-transform uppercase
+    font-family $font-beta
+    font-weight 300
+    background 0
+    cursor pointer
+
+    &::before
+    &::after
+        $offset = -16px
+        content: ""
+        position absolute
+        top $offset
+        bottom $offset
+        left $offset
+        right $offset
+        transition .2s
+
+    &::after
+        z-index 1
+
+    &__icon
+        margin-right 8px
+        position relative
+        color: $colors[brand];
+        // stroke: none;
+
+    &__text
+        display inline
+        position relative
+
+    &:hover
+        &::before
+            background: $colors['light']

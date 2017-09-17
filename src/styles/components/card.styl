@@ -1,0 +1,157 @@
+.card
+    $this = selector()
+    position relative
+    display block
+    text-decoration none
+    color inherit
+    outline 0
+
+    &__stock
+        position absolute
+        right 100%
+        bottom 100%
+        transform-origin 100% 100%
+        transform rotate(-90deg)
+        padding: 0 0 10px;
+        white-space nowrap
+        text-transform uppercase
+        text-align right
+        font-family: $font-beta;
+        font-weight 300
+        letter-spacing: 0.1em;
+        color: $colors["brand"];
+
+        &_order
+            color: $colors["text-light"];
+
+    &__img
+        margin-bottom 28px
+        display block
+        box-sizing border-box
+        width 100%
+        // border 1px solid $colors["light"];
+        transition: .2s;
+
+    &__article
+        margin-bottom 14px
+        font-family: $font-beta;
+        font-weight 300
+        letter-spacing: 0.1em;
+        color: $colors["text-light"]
+
+    &__title
+        margin-bottom 16px
+        display block
+        font-size 16px
+        line-height 1.875
+        font-family $font-gamma
+        transition: .2s;
+
+        &:hover
+            color: $colors["brand"]
+
+    &__title-text
+        margin-right 16px
+        display inline
+
+    &__title-arrow
+        display inline-block
+        // transform: translateY(0.5px);
+        color: $colors["brand"]
+
+    &__price
+        position relative
+        margin-bottom 22px
+        padding-left 17px
+        font-family: $font-beta;
+        letter-spacing: 0.1em;
+        text-transform uppercase
+        color: $colors["brand"];
+
+        &::before
+            content ""
+            position absolute
+            top 0
+            bottom 0
+            left 0
+            margin auto
+            display inline-block
+            border-top 1px solid
+            width 11px
+            height 0
+
+        &_big
+            font-size 16px
+
+    &__value
+        font-weight 700
+
+    &__unit
+        margin-left 6px
+        font-weight 300
+        color: $colors["text"]
+
+    &__media
+        background: #fff
+
+    &__media &__img
+        margin-bottom 0
+
+    &__desc
+        padding $add-gutter
+        background: $colors["light"]
+        overflow hidden
+
+    &__desc-cells
+        +rmin($screens["medium"])
+            margin-left:  - $grid-settings["gutter"];
+            margin-right: - $grid-settings["gutter"];
+
+        +rmin($screens["large"])
+            margin-left:  0;
+            margin-right: 0;
+
+    &__desc-cell
+        float left
+        box-sizing border-box
+        width 100%
+
+        +rmin($screens["medium"])
+            width: 50%;
+            padding-left:  $grid-settings["gutter"];
+            padding-right: $grid-settings["gutter"];
+
+        +rmin($screens["large"])
+            width: 100%
+            padding-left:  0;
+            padding-right: 0;
+
+    &__list
+        margin-bottom: 30px;
+
+    &__more
+        margin-top: 15px;
+
+    a&:hover
+    a&:focus
+        {$this}__img
+            box-shadow: 0 0 0 1px $colors["brand"];
+
+        {$this}__title
+            color: $colors["brand"];
+
+    +rmin($screens["large"])
+        &_full
+            display flex
+
+        &__media
+            flex 6 1 60%
+
+        &__desc
+            flex 4 1 40%
+            padding 75px 68px 60px 60px
+
+        &__list
+            margin-bottom: 76px;
+
+

@@ -1,8 +1,0 @@
-mixin modal(props)
-    .modal(id=props.id)
-        .container.modal__inner
-            .modal__dialog
-                if block
-                    block
-                button(type="button", title="Закрыть").modal__close
-                    +icon("close")

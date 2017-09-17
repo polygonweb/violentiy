@@ -1,1 +1,0 @@
-# "Polygon" front-end template

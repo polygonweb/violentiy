@@ -4,7 +4,7 @@ module.exports = {
   src: 'build/**/*',
   deployOptions: {
     prefix: 'build',
-    repository: 'https://github.com/polygonweb/technomart.git',
+    repository: 'https://github.com/polygonweb/violentiy.git',
     message: 'deploy',
     // branches: ['gh-pages'],
     remoteBranch: 'gh-pages',

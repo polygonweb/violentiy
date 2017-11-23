@@ -2,10 +2,10 @@ export function isTouch() {
     return (!!('ontouchstart' in window) ||
         (navigator.MaxTouchPoints > 0) ||
         (navigator.msMaxTouchPoints > 0));
-}
+};
 
 export const getScrollBarValue = (function() {
-    let elem = document.createElement('div');
+    var elem = document.createElement('div');
     elem.style.cssText = `
       width: 99px !important;
       height: 99px !important;
@@ -21,7 +21,7 @@ export const getScrollBarValue = (function() {
     return function() {
         return scrollValue;
     }
-  })()
+  })();
 
 function getViewportH() {
     return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
